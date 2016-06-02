@@ -1,9 +1,4 @@
-
-
-
-
-
-  <div data-role="main" class="ui-content">
+<div data-role="main" class="ui-content">
     <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Submit
 </a>
 

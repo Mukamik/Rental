@@ -445,3 +445,24 @@
 .down{
   color:red;
 }
+
+/*********************************************************************************/
+/* Contact Form                                                                  */
+/*********************************************************************************/
+#contact{
+    background-color: orange;
+    position: fixed;
+    transition: all 1s ease;
+    right: 10px;
+    bottom: 0px;
+    max-height: 100px;
+    opacity: 0.5;
+    max-width: 300px;
+
+}
+
+#contact:hover{
+    max-height: 9999px;
+    transition: all 0.5s ease;
+        opacity: 1;
+}
