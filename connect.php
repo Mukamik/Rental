@@ -7,7 +7,7 @@
 
 	$host = "localhost";
 	$user = "root";
-	$pass = "";
+	$pass = "root";
 	$db = "db1";
 	
 	$conn = mysqli_connect($host, $user, $pass, $db) or die("database connection is not working");
@@ -20,7 +20,7 @@
 //mysqli_select_db();
 
 
-mysqli_close($conn);
+//mysqli_close($conn);
 
 
 ?>

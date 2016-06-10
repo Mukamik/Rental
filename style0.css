@@ -15,8 +15,6 @@
     padding-left:15px;
 	}
 	
-	
-	
 	body
 	{
 		margin: 0px;
@@ -71,11 +69,25 @@
 		overflow: hidden;
 		margin: auto;
 		width: 1200px;
+        display: table;
+        
+	}
+	.Scontainer
+	{
+		overflow: hidden;
+		width: 200px;
+        margin: auto;
+	}
+	.Vcontainer
+	{
+		overflow: hidden;
+		margin: auto;
+		width: 1200px;
 	}
 	
 	.error {
     color: maroon;
-}
+    }
 	.errorE{
 		boxShadow = "0px 0px 5px #FF3333";
 	}
@@ -161,15 +173,8 @@
 		
 
 /*********************************************************************************/
-	.boxEmpty
-	{
-		
-		background: rgba(0,0,0,0);
-		width: 404px;
-		padding: 5px 40px;
-	}
-
 	
+
 	.boxB
 	{   /* Project homepage form */
         font-family: 'Open Sans','Source Sans Pro', 'sans-serif';
@@ -178,8 +183,33 @@
         padding: 20px;
 		width: 600px;
         border: 1px solid #56A028;
+        display: table-cell;
         /*   or #ccc */
 	}
+
+	.VehicleBox
+	{   /* Project homepage form */
+        font-family: 'Open Sans','Source Sans Pro', 'sans-serif';
+		border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+		width: 700px;
+        border: 1px solid #56A028;
+        display: table-cell;
+        /*   or #ccc */
+	}
+
+    .ResvBox
+	{   /* Project homepage form */
+        font-family: 'Open Sans','Source Sans Pro', 'sans-serif';
+		border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+		width: 500px;
+        border: 1px solid #56A028;
+        /*   or #ccc */
+	}
+
 
     .Rform{
     color: #2c312c; 
@@ -444,4 +474,25 @@
 
 .down{
   color:red;
+}
+
+/*********************************************************************************/
+/* Contact Form                                                                  */
+/*********************************************************************************/
+
+#contact{
+    position: fixed;
+    transition: all 1s ease;
+    right: 10px;
+    bottom: 0px;
+    max-height: 100px;
+    opacity: 0.5;
+    max-width: 300px;
+
+}
+
+#contact:hover{
+    max-height: 9999px;
+    transition: all 0.5s ease;
+        opacity: 1;
 }
