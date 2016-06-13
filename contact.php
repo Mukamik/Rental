@@ -1,5 +1,5 @@
-<div id="contact">
-    <h2>Contact</h2>
+<div id="contact" class="boxB">
+    <h3>Contact</h3>
     <p>Contact us with the form below!<br></p>
     <form name="contactform" method="post" action="sendmail.php">
         <label for="first_name">First Name *</label>
