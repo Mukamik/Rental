@@ -11,5 +11,5 @@ function printPage() {
 }
 </script>
 
-<button onclick="printPage()" class="btn btn-success">
+<button onclick="printPage()" data-role="none" class="btn btn-success">
 <span class="glyphicon glyphicon-print"></span> Print</button>

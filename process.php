@@ -2,15 +2,60 @@
 <?php
 
 include 'head.php';
+session_start();
+
+?>
+
+<?php
 
 
 //TODO: condition to check if user is logged in to continue with the process.
 
+	if( isset($_SESSION['user_id'])){
+		
+	}
+	else{
+        
+        ?>
+
+
+                <div id="featured" class="container">
+                        <div class="boxB">
+            
+                            <div class="alert alert-danger">
+                                <h4 class="Rform"> 
+
+<?php
+		echo 'you need to login or signup to access this page<br>';
+		
+		echo '<META HTTP-EQUIV="Refresh" Content="1 ;URL=index.php">';
+		die();
+	}
+	
+?>
+                                
+             </h4>                   
+            </div>
+            </div>
+        </div>
+    
+    
+    
+<?php
+
+
 // div tags here
+
+
+include 'goBack.php';
 
 ?>
 
-
+            
+            
+            
+            
+            
 <div id="featured" class="container">
     <div class="ResvBox">
             
@@ -145,8 +190,11 @@ $conn = mysqli_connect("localhost", "root", "root", "db1") or die("database conn
 
 
 
+
+
         
 <?php
+
 mysqli_close($conn);
 include 'footer.php';
 

@@ -108,6 +108,7 @@
                 self._setStars(pos);
                 self.$element.trigger('change').trigger('rating.change', [self.$element.val(), self._getCaption()]);
                 self.starClicked = true;
+                saveRating(self.$element.val()); //Activate our database function
             });
         },
         _starMouseMove: function (e) {

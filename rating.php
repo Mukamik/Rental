@@ -1,4 +1,21 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"
+        ></script>
+<script>
+function saveRating(rating){
+
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200)
+            {
+                document.getElementById("response").innerHTML = xhttp.responseText;
+            }
+    };
+    xhttp.open("GET","saverating.php?rating=" + rating, true);
+    xhttp.send();
+
+}
+</script>
 <script src="star-rating.js" type="text/javascript"></script>
 <link href="star-rating.css" media="all" rel="stylesheet" type="text/css" />
 

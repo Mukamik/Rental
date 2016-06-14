@@ -1,16 +1,37 @@
+
 <?php 
 include 'head.php';
+// user should be logged in to view this page
 
 ?>
-    
+
+   
 <div id="featured" class="container">
     
     <div class="boxB">
         
-    <h4 class="Rform">Rent A Car</h4>
-                                  <legend></legend>
+        <!-- This page is for the other services offered
+            - Limo service
+            - a Bidding serivce for used cars, a cheap alternative for our clients
+                    for example a client that cannot afford one of the new car models,
+                    they can use this service to name their price and we can accommodate by 
+                        offering used cars and older models.
+        -->
+                     
 
-    <form action="process.php" method="POST" enctype="multipart/form-data" class="centerform">
+        <form action="process_used.php" method="POST" enctype="multipart/form-data" class="centerform">
+                                 <b class="alert alert-danger col-xs-4" >All Bids start at $25</b>
+
+        <legend></legend>
+
+          <div class="alert alert-info" >
+         <h4 class="Rform">Name Your Price Service</h4>
+              <input type="number" id="bid" name="bid" min="20" max="100" placeholder="$$ Your bid here $$" required>
+        </div>
+     <legend></legend>
+
+
+    
         
      Choose a pickup location<br>
         <select id="loc" name="loc" data-role="none">
@@ -44,7 +65,7 @@ include 'head.php';
         </select> <br><br>
         
         Age:
-    b    <select id="age" name="age" data-role="none">
+        <select id="age" name="age" data-role="none">
         <option>+25</option>
         <option>24</option>
         <option>23</option>
@@ -67,44 +88,29 @@ include 'head.php';
         <input type="submit" class="btn btn-success" name="Reserve" data-role="none" value="Reserve Now"/>   
         <input type="reset" class="btn btn-info" value="Reset" data-role="none">
     </form>
-    
-    
-    </div>	
-    
-    
-    
 
-<!--########################
-Customers should be able to check their reservations on this form
-they can input confirmation number and their email 
-(confirmation number should be generated randomly by rand())
-###############################
---> 
-    
-    <div class="ResvBox" >
         
-    <h4 class="Rform">I already have a reservation</h4>
-                                  <legend></legend>
 
-    <form action="view2.php" method="POST" name="check" id="check" enctype="multipart/form-data" class="centerform">
-        
-    Email:<input type="email" id="resv_email" name="resv_email" data-role="none" placeholder="example@email.com" required> <br>
-    Confirmation Code:<input type="text" id="code" name="code" data-role="none" placeholder="your confirmation code" required><br><br>
-                              <legend></legend>
 
-    <input type="submit" class="btn btn-success" data-role="none" name="Submit" value="Check / View"/>   
-    
-    </form> 
-       <script type="text/javascript" src="index_validation.js"></script> 
-    </div>	
-    
-     <input id="myRating" type="text" class="rating" data-size="lg" > 
-    <p id="response"></p>
+
+    </div>
 </div>
-        
-    
-<?php 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php 
 include 'footer.php';
 
 ?>

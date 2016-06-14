@@ -1,19 +1,76 @@
-<div data-role="main" class="ui-content">
-    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Submit
-</a>
+<?php
+include 'head.php';
+include 'connect.php';
 
-    <div data-role="popup" id="myPopup" class="ui-content" data-overlay-theme="b" style="min-width:250px;">
-      <form method="post" action="">
-        <div>
-          <h3>Login information</h3>
-          <label for="usrnm" class="ui-hidden-accessible">Username:</label>
-          <input type="text" name="user" id="usrnm" placeholder="Username">
-          <label for="pswd" class="ui-hidden-accessible">Password:</label>
-          <input type="password" name="passw" id="pswd" placeholder="Password">
-          <label for="log">Keep me logged in</label>
-            <input type="checkbox" name="login" id="log" value="1" data-mini="true">
-          <input type="submit" data-inline="true" value="Log in">
+
+if(isset($_POST['Login'])){
+    
+    
+    if (empty ( $_POST ["email"]) == false || empty ( $_POST ["password"] ) == false ){
+       $user_email = mysqli_real_escape_string($conn, $_POST["email"]);
+        $user_password = mysqli_real_escape_string($conn, $_POST["password"]);
+
+    }
+    else{
+        
+        echo "username and/or password cannot be empty.. redirecting";
+		echo '<META HTTP-EQUIV="Refresh" Content="3; URL=index.php">';
+        
+    }
+
+
+    $login_sql = $conn->query("SELECT * FROM person WHERE email = '$user_email' AND password = '$user_password'");
+
+     //check if exists on db
+          
+    if(!$login_sql)
+    {
+            echo "<b>". $user_email ." e-mail address is not found</b><br>";   
+            mysqli_close($conn);
+            echo '<META HTTP-EQUIV="Refresh" Content="3; URL=index.php">';
+    } 
+    
+        $row = $login_sql->fetch_array(MYSQLI_BOTH);
+        session_start();
+        $_SESSION['user_id'] = $row['user_id'];
+?>
+
+<div id="featured" class="container">
+    <div class="boxB">
+            
+        <div class="alert alert-success">
+         <h4 class="Rform">Welcome <?php echo $row['fname'] ?>, <br> Redirecting...</h4> 
         </div>
-      </form>
+
+
+    <?php
+				
+		 echo '<META HTTP-EQUIV="Refresh" Content="3; URL=index.php">';
+
+	mysqli_close($conn);
+
+}
+else{
+    
+    //redirect
+    echo '<META HTTP-EQUIV="Refresh" Content="3; URL=index.php">';
+    	mysqli_close($conn);
+
+}
+
+?>
+
     </div>
-    </div>
+
+</div>
+
+
+
+
+<?php
+
+mysqli_close($conn);
+
+include 'footer.php';
+
+?>
